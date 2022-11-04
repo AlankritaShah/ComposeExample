@@ -23,7 +23,7 @@ import com.alankrita.composeexample.R
 
 class Lemonade {
 
-    sealed class LemonadeResource(val imageId: Int, val description: String, val text: String, val nextStep: LemonadeResource ) {
+    sealed class LemonadeResource(val imageId: Int, val description: String, val text: String, val nextStep: LemonadeResource) {
         object TREE : LemonadeResource(
             R.drawable.lemon_tree,
             "Lemon Tree",

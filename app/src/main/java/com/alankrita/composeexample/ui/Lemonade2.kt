@@ -61,41 +61,40 @@ class Lemonade2 {
 
     @Composable
     fun LemonadeWithImageAndText(modifier: Modifier) {
-//        var result: LemonadeResource by remember {
-//            mutableStateOf(LemonadeResource.TREE)
-//        }
-//
-//        var squeezeCount by remember {
-//            mutableStateOf(0)
-//        }
-//
-//        Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
-//            Text(text = result.text)
-//            Spacer(modifier = Modifier.padding(10.dp))
-//            Image(
-//                painter = painterResource(id = result.imageId),
-//                contentDescription = result.description,
-//                modifier = Modifier.clickable {
-//                    when(result){
-//                        LemonadeResource.TREE -> {
-//                            result = LemonadeResource.SQUEEZE
-//                            squeezeCount = (2..4).random()
-//                        }
-//                        LemonadeResource.SQUEEZE -> {
-//                            while(squeezeCount > 0)
-//
-//                        }
-//                        LemonadeResource.TREE -> {
-//                            result = LemonadeResource.SQUEEZE
-//                            squeezeCount = (2..4).random()
-//                        }
-//                        LemonadeResource.TREE -> {
-//                            result = LemonadeResource.SQUEEZE
-//                            squeezeCount = (2..4).random()
-//                        }
-//                    }
-//                }
-//            )
-//        }
+        var result: LemonadeResource by remember {
+            mutableStateOf(LemonadeResource.TREE)
+        }
+
+        var squeezeCount by remember {
+            mutableStateOf(0)
+        }
+
+        Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(text = result.text)
+            Spacer(modifier = Modifier.padding(10.dp))
+            Image(
+                painter = painterResource(id = result.imageId),
+                contentDescription = result.description,
+                modifier = Modifier.clickable {
+                    when(result){
+                        LemonadeResource.TREE -> {
+                            result = LemonadeResource.SQUEEZE
+                            squeezeCount = (2..4).random()
+                        }
+                        LemonadeResource.SQUEEZE -> {
+                            if(squeezeCount > 0)
+                                squeezeCount--
+                            else result = LemonadeResource.DRINK
+                        }
+                        LemonadeResource.DRINK -> {
+                            result = LemonadeResource.RESTART
+                        }
+                        LemonadeResource.RESTART -> {
+                            result = LemonadeResource.TREE
+                        }
+                    }
+                }
+            )
+        }
     }
 }
