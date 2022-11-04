@@ -1,4 +1,4 @@
-package com.alankrita.composeexample
+package com.alankrita.composeexample.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -18,22 +18,9 @@ import androidx.compose.ui.unit.dp
 import com.alankrita.composeexample.ui.theme.ComposeExampleTheme
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import com.alankrita.composeexample.R
 
-class DiceRoller : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            ComposeExampleTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    DiceRollerApp()
-                }
-            }
-        }
-    }
+class DiceRoller {
 
     @Preview
     @Composable
@@ -49,7 +36,7 @@ class DiceRoller : ComponentActivity() {
         var result by remember{
             mutableStateOf(1)
         }
-        var imageResource = when (result) {
+        val imageResource = when (result) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
