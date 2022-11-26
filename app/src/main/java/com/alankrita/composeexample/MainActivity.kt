@@ -17,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.alankrita.composeexample.ui.TipCalculator
+import com.alankrita.composeexample.ui.TipCalculatorCustom
 import com.alankrita.composeexample.ui.theme.ComposeExampleTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,7 +31,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
 //                    Greeting("Android")
-                    TipCalculator().TipTimeScreenPreview()
+                    TipCalculatorCustom().TipTimeScreenPreview()
                 }
             }
         }
