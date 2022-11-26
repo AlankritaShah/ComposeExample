@@ -1,5 +1,6 @@
 package com.alankrita.composeexample.ui
 
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -145,9 +146,10 @@ class TipCalculatorCustom {
         }
     }
 
-    private fun calculateTip(amount: Double, tipPercent: Double = 15.0, roundUp: Boolean): String {
+    @VisibleForTesting
+    internal fun calculateTip(amount: Double, tipPercent: Double = 15.0, roundUp: Boolean): String {
         var tip = (tipPercent / 100) * amount
         if (roundUp) tip = ceil(tip)
-        return NumberFormat.getCurrencyInstance(Locale.ROOT).format(tip)
+        return NumberFormat.getCurrencyInstance(Locale.US).format(tip)
     }
 }
