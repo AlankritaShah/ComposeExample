@@ -1,5 +1,6 @@
 package com.alankrita.composeexample
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -20,21 +21,26 @@ import com.alankrita.composeexample.affirmations.AffirmationApp
 import com.alankrita.composeexample.ui.TipCalculator
 import com.alankrita.composeexample.ui.TipCalculatorCustom
 import com.alankrita.composeexample.ui.theme.ComposeExampleTheme
+import com.alankrita.woof.setContentWoof
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeExampleTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    AffirmationApp()
-                }
-            }
+//            ComposeExampleTheme {
+//                // A surface container using the 'background' color from the theme
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colors.background
+//                ) {
+//                    AffirmationApp()
+//                }
+//            }
+
+            setContentWoof()
         }
+
+
     }
 }
 
