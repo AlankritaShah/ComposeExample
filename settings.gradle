@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "ComposeExample"
 include ':app'
 include ':woof'
+include ':superheroes'

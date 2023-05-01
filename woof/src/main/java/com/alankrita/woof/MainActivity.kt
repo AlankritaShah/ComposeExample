@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun setContentWoof() {
+fun SetContentWoof() {
     WoofTheme {
         WoofApp()
     }
